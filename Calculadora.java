@@ -1,45 +1,40 @@
-package practica2;
+package proyectocalc;
 
-public class Calculadora implements ICalculadora {
+import java.util.Scanner;
 
-    public int a;
-    public int b;
-    
-    @Override
-    public int suma(int a, int b) {
-    return a+b;   
-    }
 
-    @Override
-    public int resta(int a, int b) {
-    return a-b;
-    }
-    
-    
-    public int Multiplicacion(int a, int b){
-    
-        return a*b;
-    }
-    
-    public int Divicion (int a, int b){
-        
-        return a/b;
-    }
+public class Calculadora {
 
-    public Calculadora() {
+ 
+    public Calculadora(int a, int b) {
+     suma(a, b);
+     resta(a, b);
+     }
+    
+    public Calculadora (){
+    }
+   
+    Scanner entrada = new Scanner(System.in);
+   
+    public void suma (int a,int b){
+        int suma;
+        System.out.println("Ingrese valor de a:");
+        a = entrada.nextInt();
+        System.out.println("Ingrese valor de b:");
+        b = entrada.nextInt();
+        suma = a+b;   
+        System.out.println("Resultado:" +suma); 
     }
     
-    public Calculadora(int a, int b){
-      this.a = a;
-      this.b = b;
-      
-        System.out.println(this.Divicion(a, b));
-        System.out.println(this.Multiplicacion(a, b));
-        System.out.println(this.suma(a, b));
-        System.out.println(this.resta(a, b));
+    public int resta(int a, int b){
+        int resta;
+        System.out.println("Ingrese valor de a:");
+        a = entrada.nextInt();
+        System.out.println("Ingrese valor de b:");
+        b = entrada.nextInt();
+        resta = a-b;
+        System.out.println("Resultado:" +resta);
+        return resta;
     }
-    
 }
-//this sirve para acceder a los elementos de la misma clase
-// super sirve para acceder a los elementos de la clase padre
-//como usar el eval 
+
